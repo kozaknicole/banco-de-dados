@@ -43,4 +43,29 @@ FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno),
 FOREIGN KEY (id_curso) REFERENCES curso(id_curso)
 );
 
+CREATE TABLE login(
+id_login INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+id_aluno INT,
+data_hora DATETIME,
+ip VARCHAR (40),
+sucesso BOOLEAN,
+FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
+);
+
+
+DROP TABLE aluno;
 SHOW TABLES;
+
+-- Insert dados professor
+INSERT INTO professor(id_professor,nome,especialidade,salario,uf) VALUES
+(1,'João da Silva','Banco de Dados',2500.00,'PR');
+
+-- Insert diciplinas
+INSERT INTO diciplina(nome,id_professor,carga_horaria) VALUES
+('Banco de Dados Iniciante',1, 60);
+
+-- Alunos
+INSERT INTO aluno(nome,sexo,data_nascimento,nota_final,ativo) VALUES
+('Nicole Kozak','F','2007-05-10',8.5, TRUE);
+
+
